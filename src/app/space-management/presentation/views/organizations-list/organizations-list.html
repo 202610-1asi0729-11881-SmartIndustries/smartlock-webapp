@@ -1,0 +1,11 @@
+<app-header-bar/>
+
+<div class="list-container">
+  <div class="cards-grid">
+    @for (org of organizations; track org.id) {
+      <app-organization-card [organization]="org"></app-organization-card>
+    } @empty {
+      <p>No hay organizaciones disponibles.</p>
+    }
+  </div>
+</div>

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { HeaderBar } from '../header-bar/header-bar';
+import { OrganizationsList } from '../../../../space-management/presentation/views/organizations-list/organizations-list';
 
 @Component({
   selector: 'app-layout',
-  imports: [HeaderBar],
+  imports: [HeaderBar, OrganizationsList],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
 })

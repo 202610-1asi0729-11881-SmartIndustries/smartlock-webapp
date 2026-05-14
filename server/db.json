@@ -1,0 +1,58 @@
+{
+  "organizations": [
+    {
+      "id": 1,
+      "name": "Technova Solutions",
+      "description": "Software company focused on cloud platforms and enterprise solutions."
+    },
+    {
+      "id": 2,
+      "name": "InnovaSoft Labs",
+      "description": "Innovation-driven startup building modern web and mobile applications."
+    },
+    {
+      "id": 3,
+      "name": "CloudForge Systems",
+      "description": "Technology company specialized in scalable infrastructure and DevOps services."
+    }
+  ],
+  "invitations": [
+    {
+      "organizationId": 3,
+      "role": "owner",
+      "userId": 2
+    },
+    {
+      "organizationId": 1,
+      "role": "guest",
+      "userId": 2
+    },
+    {
+      "organizationId": 2,
+      "role": "owner",
+      "userId": 2
+    }
+  ],
+  "users" : [
+    {
+      "id": 1,
+      "name": "Ana Torres"
+    },
+    {
+      "id": 2,
+      "name": "Luis Mendoza"
+    },
+    {
+      "id": 3,
+      "name": "Carla Rivas"
+    },
+    {
+      "id": 4,
+      "name": "Diego Salazar"
+    },
+    {
+      "id": 5,
+      "name": "María Fernández"
+    }
+  ]
+}
