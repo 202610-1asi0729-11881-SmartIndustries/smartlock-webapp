@@ -1,1 +1,16 @@
-<h1>Operations</h1>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <div class="item-container">
+      @for (item of items; track item.label; let i = $index){
+        <button
+          matButton
+          [class.active]="selectedItem === i"
+          (click)="navigateTo(item.route, i)"
+        >
+          <mat-icon class="icon"> {{ item.icon }} </mat-icon>
+          <span>{{ item.label }}</span>
+        </button>
+      }
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
