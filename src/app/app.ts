@@ -5,7 +5,8 @@ import {Layout} from './shared/presentation/component/layout/layout';
 @Component({
   selector: 'app-root',
   imports: [
-    Layout
+    Layout,
+    RouterOutlet
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
