@@ -8,7 +8,7 @@ import {
 } from '@angular/material/sidenav';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton} from '@angular/material/button';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-operations-layout',
@@ -19,18 +19,19 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
     RouterLink,
     MatDrawerContent,
     MatDrawerContainer,
-    MatDrawer
+    MatDrawer,
+    RouterOutlet
   ],
   templateUrl: './operations-layout.html',
   styleUrl: './operations-layout.css',
 })
 export class OperationsLayout {
   protected items = [
-    { label: "Dashboard", icon: "dashboard", route: ""},
-    { label: "People", icon: "accessibility_new", route: ""},
-    { label: "Devices", icon: "door_back", route: ""},
+    { label: "Dashboard", icon: "dashboard", route: "dashboard"},
+    { label: "People", icon: "accessibility_new", route: "people"},
+    { label: "Devices", icon: "door_back", route: "devices"},
     { label: "Rules", icon: "gavel", route: ""},
     { label: "Audit", icon: "search_activity", route: ""},
-    { label: "Guests", icon: "shield_person", route: ""}
+    { label: "Administrators", icon: "shield_person", route: "administrators"},
   ];
 }
