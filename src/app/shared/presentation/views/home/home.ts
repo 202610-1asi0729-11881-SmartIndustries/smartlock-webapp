@@ -4,13 +4,15 @@ import {MatButton} from '@angular/material/button';
 import {
   OrganizationCard
 } from '../../../../space-management/presentation/components/organization-card/organization-card';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   imports: [
     MatIcon,
     MatButton,
-    OrganizationCard
+    OrganizationCard,
+    TranslatePipe
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',

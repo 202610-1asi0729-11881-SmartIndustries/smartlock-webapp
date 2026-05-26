@@ -4,5 +4,13 @@
       "subscription": "Subscription",
       "sign-out": "Sign out"
     }
+  },
+  "home": {
+    "title": "Home",
+    "create-organization": "Create organization",
+    "menu": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
   }
 }
