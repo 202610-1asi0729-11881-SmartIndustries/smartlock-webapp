@@ -30,6 +30,24 @@
       <mat-card-header>
         <mat-card-title>Recent alerts</mat-card-title>
       </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="recentAlerts">
+          <ng-container matColumnDef="person">
+            <th mat-header-cell *matHeaderCellDef>Person</th>
+            <td mat-cell *matCellDef="let element">{{element.person}}</td>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element">{{element.date}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="recentAlertsColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: recentAlertsColumns"></tr>
+        </table>
+      </mat-card-content>
     </mat-card>
     <mat-card class="small-card" appearance="outlined">
       <mat-card-header>
