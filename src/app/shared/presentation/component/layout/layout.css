@@ -5,3 +5,38 @@
   color: white;
   margin: 0 0 0 20px;
 }
+
+.app-name {
+  user-select: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-header {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface);
+}
+
+.btn-signout {
+  color: #ff3b30;
+}
+
+.btn-signout mat-icon {
+  color: #ff3b30;
+}
+
+.btn-signout:hover {
+  background-color: rgba(255, 59, 48, 0.05) !important;
+}

@@ -1,11 +1,31 @@
 <mat-toolbar>
-  <span class="app-name">SmartLock</span>
+  <h1
+    class="app-name"
+    (click)="navigateTo('home')"
+    role="tab"
+  >SmartLock</h1>
   <span class="spacer"></span>
   <app-language-switcher/>
-  <button matIconButton class="profile-button">
+  <button matIconButton [matMenuTriggerFor]="menu" class="profile-button">
     <mat-icon>
       person
     </mat-icon>
   </button>
-</mat-toolbar>
+  <mat-menu #menu="matMenu" xPosition="before" class="profile-dropdown">
+    <div class="menu-header">
+      <span class="user-name">Imanol Limache</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <button mat-menu-item >
+      <mat-icon>credit_card</mat-icon>
+      <span>Billing</span>
+    </button>
+
+    <button mat-menu-item class="btn-signout">
+      <mat-icon>logout</mat-icon>
+      <span>Sign out</span>
+    </button>
+  </mat-menu></mat-toolbar>
 <router-outlet/>

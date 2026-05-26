@@ -1,0 +1,17 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <div class="header-content">
+      <div>
+        <mat-card-title>{{organization().name}}</mat-card-title>
+        <mat-card-subtitle>{{organization().owner}}</mat-card-subtitle>
+      </div>
+      <button mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{organization().description}}</p>
+  </mat-card-content>
+</mat-card>

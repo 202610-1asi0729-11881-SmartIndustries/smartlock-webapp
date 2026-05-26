@@ -1,1 +1,12 @@
-<h1>Home</h1>
+<div class="title">
+  <h1>Home</h1>
+  <button matButton="elevated">
+    <mat-icon>add</mat-icon>
+    Create organization
+  </button>
+</div>
+<div class="organizations-grid">
+  @for(organization of organizationsList; track organization.name) {
+    <app-organization-card [organization]="organization"/>
+  }
+</div>
