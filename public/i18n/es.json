@@ -1,3 +1,10 @@
 {
-
+  "home": {
+    "title": "Inicio",
+    "create-organization": "Crear organización",
+    "menu": {
+      "edit": "Editar",
+      "delete": "Eliminar"
+    }
+  }
 }

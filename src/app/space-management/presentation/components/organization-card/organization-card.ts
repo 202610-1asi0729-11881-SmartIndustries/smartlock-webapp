@@ -3,6 +3,7 @@ import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} f
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-organization-card',
@@ -16,7 +17,8 @@ import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
     MatIconButton,
     MatMenu,
     MatMenuTrigger,
-    MatMenuItem
+    MatMenuItem,
+    TranslatePipe
   ],
   templateUrl: './organization-card.html',
   styleUrl: './organization-card.css',
