@@ -5,6 +5,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
+import {DevicesTable} from '../../components/devices-table/devices-table';
 
 @Component({
   selector: 'app-devices',
@@ -15,7 +16,8 @@ import {MatIconButton} from '@angular/material/button';
     MatOption,
     MatSelect,
     MatIcon,
-    MatIconButton
+    MatIconButton,
+    DevicesTable
   ],
   templateUrl: './devices.html',
   styleUrl: './devices.css',
