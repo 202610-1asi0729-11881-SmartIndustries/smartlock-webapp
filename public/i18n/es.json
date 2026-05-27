@@ -1,3 +1,16 @@
 {
-
+  "topbar": {
+    "menu": {
+      "subscription": "Suscripción",
+      "sign-out": "Salir"
+    }
+  },
+  "home": {
+    "title": "Inicio",
+    "create-organization": "Crear organización",
+    "menu": {
+      "edit": "Editar",
+      "delete": "Eliminar"
+    }
+  }
 }
