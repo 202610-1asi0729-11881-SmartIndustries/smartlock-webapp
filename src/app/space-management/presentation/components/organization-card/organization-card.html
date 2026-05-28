@@ -19,5 +19,5 @@
 
 <mat-menu #menu="matMenu">
   <button mat-menu-item>{{"home.menu.edit" | translate}}</button>
-  <button mat-menu-item>{{"home.menu.delete" | translate}}</button>
+  <button mat-menu-item (click)="openDeleteDialog()">{{"home.menu.delete" | translate}}</button>
 </mat-menu>
