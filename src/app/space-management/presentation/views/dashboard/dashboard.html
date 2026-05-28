@@ -1,1 +1,95 @@
-<p>dashboard works!</p>
+<div class="dashboard-grid">
+  <div class="left-column">
+    <mat-card appearance="outlined" class="big-card">
+      <mat-card-header>
+        <mat-card-title>Recent access attempts</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="recentAccessAttempts">
+          <ng-container matColumnDef="person">
+            <th mat-header-cell *matHeaderCellDef>Person</th>
+            <td mat-cell *matCellDef="let element">{{element.person}}</td>
+          </ng-container>
+          <ng-container matColumnDef="deviceId">
+            <th mat-header-cell *matHeaderCellDef>Device ID</th>
+            <td mat-cell *matCellDef="let element">{{element.deviceId}}</td>
+          </ng-container>
+          <ng-container matColumnDef="result">
+            <th mat-header-cell *matHeaderCellDef>Result</th>
+            <td mat-cell *matCellDef="let element">{{element.result}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="recentAccessAttemptsColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: recentAccessAttemptsColumns;"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="right-column">
+    <mat-card class="small-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Recent alerts</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="recentAlerts">
+          <ng-container matColumnDef="person">
+            <th mat-header-cell *matHeaderCellDef>Person</th>
+            <td mat-cell *matCellDef="let element">{{element.person}}</td>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let element">{{element.type}}</td>
+          </ng-container>
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element">{{element.date}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="recentAlertsColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: recentAlertsColumns"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="small-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Offline devices</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <table mat-table [dataSource]="offlineDevices">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+          </ng-container>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+          </ng-container>
+          <ng-container matColumnDef="site">
+            <th mat-header-cell *matHeaderCellDef>Site</th>
+            <td mat-cell *matCellDef="let element">{{element.site}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="offlineDevicesColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: offlineDevicesColumns"></tr>
+        </table>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="small-card" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>More information (today)</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="today-info">
+        <div>
+          <h1>53</h1>
+          <p>Active people</p>
+        </div>
+        <div>
+          <h1>107</h1>
+          <p>Accepted attempts</p>
+        </div>
+        <div>
+          <h1>10</h1>
+          <p>Rejected attempts</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

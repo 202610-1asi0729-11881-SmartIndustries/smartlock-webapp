@@ -1,1 +1,46 @@
-<p>devices works!</p>
+<h1>Devices</h1>
+<div class="filters">
+  <div>
+    <app-search-bar/>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Mode</mat-label>
+
+      <mat-select>
+        @for (option of modeOptions; track option) {
+          <mat-option [value]="option">
+            {{ option }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+
+      <mat-select>
+        @for (option of statusOptions; track option) {
+          <mat-option [value]="option">
+            {{ option }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Current site</mat-label>
+
+      <mat-select>
+        @for (option of siteOptions; track option) {
+          <mat-option [value]="option">
+            {{ option }}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button matIconButton="outlined">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+<app-devices-table/>

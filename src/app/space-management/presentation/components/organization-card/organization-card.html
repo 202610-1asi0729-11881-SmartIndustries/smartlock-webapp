@@ -5,7 +5,7 @@
         <mat-card-title>{{organization().name}}</mat-card-title>
         <mat-card-subtitle>{{organization().owner}}</mat-card-subtitle>
       </div>
-      <button mat-icon-button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon>more_vert</mat-icon>
       </button>
     </div>
@@ -14,4 +14,10 @@
   <mat-card-content>
     <p>{{organization().description}}</p>
   </mat-card-content>
+
 </mat-card>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>{{"home.menu.edit" | translate}}</button>
+  <button mat-menu-item (click)="openDeleteDialog()">{{"home.menu.delete" | translate}}</button>
+</mat-menu>

@@ -6,6 +6,7 @@ import {LanguageSwitcher} from '../language-switcher/language-switcher';
 import {Router, RouterOutlet} from '@angular/router';
 import {MatMenu, MatMenuItem, MatMenuTrigger} from '@angular/material/menu';
 import {MatDivider} from '@angular/material/list';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-layout',
@@ -19,6 +20,7 @@ import {MatDivider} from '@angular/material/list';
     MatMenu,
     MatDivider,
     MatMenuItem,
+    TranslatePipe,
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.css',
