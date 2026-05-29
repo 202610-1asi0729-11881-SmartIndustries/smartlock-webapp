@@ -55,6 +55,10 @@ export class Dashboard {
     {id: 1, name: "Main entrance access", site: "North campus"},
     {id: 2, name: "Main entrance access", site: "North campus"},
     {id: 3, name: "Main entrance access", site: "North campus"},
+    {id: 1, name: "Main entrance access", site: "North campus"},
+    {id: 1, name: "Main entrance access", site: "North campus"},
+    {id: 1, name: "Main entrance access", site: "North campus"},
+    {id: 1, name: "Main entrance access", site: "North campus"},
   ]
   protected offlineDevicesColumns: string[] = ["id", "name", "site"];
 }

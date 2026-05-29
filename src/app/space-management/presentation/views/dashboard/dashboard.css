@@ -34,7 +34,8 @@
   overflow: hidden;
 }
 
-.alerts-card .table-scroll-container {
+.alerts-card .table-scroll-container,
+.offline-card .table-scroll-container {
   max-height: 195px;
   overflow-y: auto;
 }
