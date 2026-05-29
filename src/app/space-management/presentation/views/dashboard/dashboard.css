@@ -20,6 +20,11 @@
   flex: 1;
 }
 
+.access-card .table-scroll-container {
+  max-height: 780px;
+  overflow-y: auto;
+}
+
 .right-column {
   display: flex;
   flex-direction: column;

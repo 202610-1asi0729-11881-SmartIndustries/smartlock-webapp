@@ -38,6 +38,16 @@ export class Dashboard {
     {person: "Juan Perez", deviceId: 3, result: true},
     {person: "Imanol Limache", deviceId: 2, result: true},
     {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
+    {person: "Imanol Limache", deviceId: 4, result: true},
   ]
   protected recentAccessAttemptsColumns: string[] = ["person", "deviceId", "result"];
 
