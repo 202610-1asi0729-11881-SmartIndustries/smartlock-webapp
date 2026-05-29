@@ -12,5 +12,37 @@
       "edit": "Edit",
       "delete": "Delete"
     }
+  },
+  "dashboard": {
+    "access-attempts": {
+      "title": "Recent access attempts",
+      "table": {
+        "person": "Person",
+        "device-id": "Device ID",
+        "status": "Status"
+      }
+    },
+    "recent-alerts": {
+      "title": "Recent alerts",
+      "table": {
+        "person": "Person",
+        "type": "Type",
+        "date": "Date"
+      }
+    },
+    "offline-devices": {
+      "title": "Offline devices",
+      "table": {
+        "id": "ID",
+        "name": "Name",
+        "site": "Site"
+      }
+    },
+    "more-info": {
+      "title": "More information (Today)",
+      "active-people": "Active people",
+      "accepted-attempts": "Accepted attempts",
+      "rejected-attempts": "Rejected attempts"
+    }
   }
 }

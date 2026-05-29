@@ -11,7 +11,7 @@ const administrators = () => import('./views/administrators/administrators')
 
 const spaceManagementRoutes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'people', loadComponent: people },
+  { path: 'people', loadComponent: people},
   { path: 'dashboard', loadComponent: dashBoard },
   { path: 'devices', loadComponent: devices },
   { path: 'administrators', loadComponent: administrators },

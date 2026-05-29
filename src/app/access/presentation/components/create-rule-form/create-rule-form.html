@@ -1,0 +1,21 @@
+<h2 matDialogTitle>Create rule</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Site</mat-label>
+    <mat-select>
+      @for (option of siteOptions; track option) {
+        <mat-option [value]="option">
+          {{ option }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button matDialogClose>Cancel</button>
+  <button mat-button matDialogClose>Create</button>
+</mat-dialog-actions>

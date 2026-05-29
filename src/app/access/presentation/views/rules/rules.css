@@ -28,7 +28,7 @@
   transform: translateY(-8px);
 }
 
-app-devices-table {
+app-rules-table {
   flex: 1;
   min-height: 0;
 }

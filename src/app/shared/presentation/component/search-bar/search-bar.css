@@ -6,7 +6,7 @@
   padding: 0 16px;
   height: 44px;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   box-sizing: border-box;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
