@@ -1,0 +1,30 @@
+<h2 matDialogTitle>Add device</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>IP address</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Site</mat-label>
+    <mat-select>
+      @for (site of siteOptions; track site) {
+        <mat-option [value]="site">{{ site }}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <div class="connection-row">
+    <button mat-stroked-button>Test connection</button>
+    <div class="connection-status">
+      <span class="status-dot"></span>
+      <span>Offline</span>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button matDialogClose>Cancel</button>
+  <button mat-button matDialogClose>Add</button>
+</mat-dialog-actions>
