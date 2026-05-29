@@ -12,5 +12,37 @@
       "edit": "Editar",
       "delete": "Eliminar"
     }
+  },
+  "dashboard": {
+    "access-attempts": {
+      "title": "Intentos de acceso recientes",
+      "table": {
+        "person": "Persona",
+        "device-id": "ID del dispositivo",
+        "status": "Estado"
+      }
+    },
+    "recent-alerts": {
+      "title": "Alertas recientes",
+      "table": {
+        "person": "Persona",
+        "type": "Tipo",
+        "date": "Fecha"
+      }
+    },
+    "offline-devices": {
+      "title": "Dispositivos desconestados",
+      "table": {
+        "id": "ID",
+        "name": "Nombre",
+        "site": "Sede"
+      }
+    },
+    "more-info": {
+      "title": "Mas información (Hoy)",
+      "active-people": "Personas activas",
+      "accepted-attempts": "Intentos aceptados",
+      "rejected-attempts": "Intentos rechazados"
+    }
   }
 }

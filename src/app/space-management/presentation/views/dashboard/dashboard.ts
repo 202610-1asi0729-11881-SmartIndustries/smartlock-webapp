@@ -9,6 +9,7 @@ import {
   MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
   MatTable
 } from '@angular/material/table';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,7 +27,8 @@ import {
     MatHeaderRow,
     MatRow,
     MatHeaderRowDef,
-    MatRowDef
+    MatRowDef,
+    TranslatePipe
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
