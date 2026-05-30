@@ -49,7 +49,7 @@
     "title": "Administradores",
     "filters": {
       "invitation-status": "Estado de invitación",
-      "role": "Role"
+      "role": "Rol"
     },
     "table": {
       "id": "ID",
