@@ -4,11 +4,11 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
-import {AuditTable} from '../../components/audit-table/audit-table';
+import {AccessEventsTable} from '../../components/access-events-table/access-events-table';
 import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 
 @Component({
-  selector: 'app-audit',
+  selector: 'app-access-events',
   imports: [
     SearchBar,
     MatFormField,
@@ -17,13 +17,13 @@ import {SearchBar} from '../../../../shared/presentation/component/search-bar/se
     MatSelect,
     MatIcon,
     MatIconButton,
-    AuditTable,
+    AccessEventsTable,
     SearchBar
   ],
-  templateUrl: './audit.html',
-  styleUrl: './audit.css',
+  templateUrl: './access-events.html',
+  styleUrl: './access-events.css',
 })
-export class Audit {
+export class AccessEvents {
   protected typeOptions: string[] = ['Access attempt', 'Alert'];
   protected statusOptions: string[] = ['Accepted', 'Rejected', 'Resolved'];
 }

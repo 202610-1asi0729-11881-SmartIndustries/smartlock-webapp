@@ -13,7 +13,7 @@ import {
 } from '@angular/material/table';
 
 @Component({
-  selector: 'app-audit-table',
+  selector: 'app-access-events-table',
   imports: [
     MatTable,
     MatHeaderRow,
@@ -26,10 +26,10 @@ import {
     MatHeaderCell,
     MatHeaderCellDef
   ],
-  templateUrl: './audit-table.html',
-  styleUrl: './audit-table.css',
+  templateUrl: './access-events-table.html',
+  styleUrl: './access-events-table.css',
 })
-export class AuditTable {
+export class AccessEventsTable {
   protected audit: {type: string, status: string, personName: string, location: string, dateTime: string}[] = [
     {type: 'Access attempt', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
     {type: 'Access attempt', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
