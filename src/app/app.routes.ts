@@ -5,6 +5,7 @@ import {OperationsLayout} from './shared/presentation/component/operations-layou
 import spaceManagementRoutes from './space-management/presentation/space-management.routes';
 import accessRoutes from './access/presentation/access.routes';
 import reportRoutes from './report/presentation/report.routes';
+import administrationRoutes from './administration/presentation/administration.routes';
 
 const pageNotFound = () => import('./shared/presentation/views/page-not-found/page-not-found')
   .then(m => m.PageNotFound);
@@ -12,7 +13,12 @@ const pageNotFound = () => import('./shared/presentation/views/page-not-found/pa
 
 const baseTitle = "SmartLock";
 
-const operationRoutes: Routes = spaceManagementRoutes.concat(accessRoutes.concat(reportRoutes));
+const operationRoutes: Routes = [
+  ...spaceManagementRoutes,
+  ...accessRoutes,
+  ...reportRoutes,
+  ...administrationRoutes
+];
 
 export const routes: Routes = [
   { path: '', component: Layout, children: [

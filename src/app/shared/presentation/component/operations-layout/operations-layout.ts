@@ -3,8 +3,6 @@ import {
   MatDrawer,
   MatDrawerContainer,
   MatDrawerContent,
-  MatSidenavContainer,
-  MatSidenavContent
 } from '@angular/material/sidenav';
 import {MatIcon} from '@angular/material/icon';
 import {MatButton} from '@angular/material/button';
@@ -33,5 +31,6 @@ export class OperationsLayout {
     { label: "Rules", icon: "gavel", route: "rules"},
     { label: "Audit", icon: "search_activity", route: "audit"},
     { label: "Administrators", icon: "shield_person", route: "administrators"},
+    { label: "Roles", icon: "badge", route: "roles"},
   ];
 }
