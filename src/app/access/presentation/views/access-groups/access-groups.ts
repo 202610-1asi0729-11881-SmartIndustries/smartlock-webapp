@@ -5,12 +5,12 @@ import {MatSelect} from '@angular/material/select';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {MatDialog} from '@angular/material/dialog';
-import {RulesTable} from '../../components/rules-table/rules-table';
+import {AccessGroupsTable} from '../../components/rules-table/access-groups-table';
 import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
-import {CreateRuleForm} from '../../components/create-rule-form/create-rule-form';
+import {CreateAccessGroupForm} from '../../components/create-access-group-form/create-access-group-form';
 
 @Component({
-  selector: 'app-rules',
+  selector: 'app-access-groups',
   imports: [
     SearchBar,
     MatFormField,
@@ -19,19 +19,19 @@ import {CreateRuleForm} from '../../components/create-rule-form/create-rule-form
     MatSelect,
     MatIcon,
     MatIconButton,
-    RulesTable,
+    AccessGroupsTable,
     SearchBar,
   ],
-  templateUrl: './rules.html',
-  styleUrl: './rules.css',
+  templateUrl: './access-groups.html',
+  styleUrl: './access-groups.css',
 })
-export class Rules {
+export class AccessGroups {
   protected readonly dialog = inject(MatDialog);
 
   protected siteOptions: string[] = ['all','North campus', 'East campus', 'West campus'];
   protected statusOptions: string[] = ['Active', 'Disabled'];
 
   protected openCreateRuleForm() {
-    this.dialog.open(CreateRuleForm);
+    this.dialog.open(CreateAccessGroupForm);
   }
 }

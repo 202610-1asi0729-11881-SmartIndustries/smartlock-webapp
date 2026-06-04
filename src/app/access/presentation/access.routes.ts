@@ -1,10 +1,10 @@
 import {Routes} from '@angular/router';
 
-const rules = () => import('./views/rules/rules')
-  .then(m => m.Rules);
+const accessGroups = () => import('./views/access-groups/access-groups')
+  .then(m => m.AccessGroups);
 
 const accessRoutes: Routes = [
-  {path:'rules', loadComponent: rules},
+  {path:'access-groups', loadComponent: accessGroups},
 ]
 
 export default accessRoutes;

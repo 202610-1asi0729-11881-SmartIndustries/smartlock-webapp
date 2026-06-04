@@ -34,7 +34,6 @@ import {StatusBadge} from '../../../../shared/presentation/component/status-badg
     MatRowDef,
     TranslatePipe,
     MatFormField,
-    MatLabel,
     MatSelect,
     MatOption,
     StatusBadge

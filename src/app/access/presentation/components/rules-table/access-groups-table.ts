@@ -13,7 +13,7 @@ import {
 } from '@angular/material/table';
 
 @Component({
-  selector: 'app-rules-table',
+  selector: 'app-access-groups-table',
   imports: [
     MatTable,
     MatHeaderRow,
@@ -26,10 +26,10 @@ import {
     MatHeaderCell,
     MatHeaderCellDef
   ],
-  templateUrl: './rules-table.html',
-  styleUrl: './rules-table.css',
+  templateUrl: './access-groups-table.html',
+  styleUrl: './access-groups-table.css',
 })
-export class RulesTable {
+export class AccessGroupsTable {
   protected rules: {id: number, name: string, site: string, status: string}[] = [
     {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
     {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},

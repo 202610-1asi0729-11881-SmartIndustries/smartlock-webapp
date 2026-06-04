@@ -7,7 +7,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 
 @Component({
-  selector: 'app-create-rule-form',
+  selector: 'app-create-access-group-form',
   imports: [
     MatDialogTitle,
     MatDialogContent,
@@ -20,9 +20,9 @@ import {MatSelect} from '@angular/material/select';
     MatOption,
     MatSelect,
   ],
-  templateUrl: './create-rule-form.html',
-  styleUrl: './create-rule-form.css',
+  templateUrl: './create-access-group-form.html',
+  styleUrl: './create-access-group-form.css',
 })
-export class CreateRuleForm {
+export class CreateAccessGroupForm {
   protected siteOptions: string[] = ['North campus', 'East campus', 'West campus'];
 }
