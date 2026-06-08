@@ -46,7 +46,11 @@
     }
   },
   "roles": {
-    "title": "Roles"
+    "title": "Roles",
+    "table": {
+      "id": "ID",
+      "name": "Nombre"
+    }
   },
   "administrators": {
     "title": "Administradores",
