@@ -53,7 +53,11 @@
     }
   },
   "sites": {
-    "title": "Sites"
+    "title": "Sites",
+    "table": {
+      "id": "ID",
+      "name": "Name"
+    }
   },
   "administrators": {
     "title": "Administrators",

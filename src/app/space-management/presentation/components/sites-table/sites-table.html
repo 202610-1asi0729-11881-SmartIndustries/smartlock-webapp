@@ -1,0 +1,12 @@
+<table mat-table [dataSource]="sites">
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>{{'sites.table.id' | translate}}</th>
+    <td mat-cell *matCellDef="let element">{{element.id}}</td>
+  </ng-container>
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>{{'sites.table.name' | translate}}</th>
+    <td mat-cell *matCellDef="let element">{{element.name}}</td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="sitesColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: sitesColumns"></tr>
+</table>
