@@ -52,6 +52,9 @@
       "name": "Name"
     }
   },
+  "sites": {
+    "title": "Sites"
+  },
   "administrators": {
     "title": "Administrators",
     "filters": {
