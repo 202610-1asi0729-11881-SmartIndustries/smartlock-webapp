@@ -4,6 +4,7 @@ import {MatFormField, MatLabel} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {TranslatePipe} from '@ngx-translate/core';
+import {AlertsTable} from '../../components/alerts-table/alerts-table';
 
 @Component({
   selector: 'app-alerts',
@@ -13,6 +14,7 @@ import {TranslatePipe} from '@ngx-translate/core';
     MatLabel,
     MatOption,
     MatSelect,
+    AlertsTable,
     TranslatePipe
   ],
   templateUrl: './alerts.html',

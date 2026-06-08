@@ -55,8 +55,15 @@
   "alerts": {
     "title": "Alertas",
     "filters": {
-      "site": "Sede",
+      "site": "Sitio",
       "status": "Estado"
+    },
+    "table": {
+      "id": "ID",
+      "location": "Ubicación",
+      "person": "Persona",
+      "status": "Estado",
+      "date": "Fecha"
     }
   },
   "sites": {

@@ -57,6 +57,13 @@
     "filters": {
       "site": "Site",
       "status": "Status"
+    },
+    "table": {
+      "id": "ID",
+      "location": "Location",
+      "person": "Person",
+      "status": "Status",
+      "date": "Date"
     }
   },
   "sites": {
