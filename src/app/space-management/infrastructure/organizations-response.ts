@@ -2,6 +2,7 @@ import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-respo
 
 export interface OrganizationsResource extends BaseResource {
   id: number;
+  name: string;
   owner: string;
   description: string;
 }
