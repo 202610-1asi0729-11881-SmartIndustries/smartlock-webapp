@@ -3,5 +3,6 @@ export const environment = {
   platformProviderApiBaseUrl: 'http://localhost:3000/api/v1',
   organizationsEndPointPath: '/organizations',
   sitesEndPointPath: '/sites',
-  devicesEndPointPath: '/devices'
+  devicesEndPointPath: '/devices',
+  accessGroupsEndPointPath: '/access-groups'
 };
