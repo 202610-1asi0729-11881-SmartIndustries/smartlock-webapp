@@ -8,6 +8,7 @@ import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
 import {PeopleTable} from '../../components/people-table/people-table';
 import {CreatePersonForm} from '../../components/create-person-form/create-person-form';
+import {SpaceManagementStore} from '../../../application/space-management.store';
 
 @Component({
   selector: 'app-people',
@@ -26,6 +27,7 @@ import {CreatePersonForm} from '../../components/create-person-form/create-perso
 })
 export class People {
   protected readonly dialog = inject(MatDialog);
+  protected readonly store = inject(SpaceManagementStore);
 
   protected statusOptions = ["All", "Active", "Inactive", "Identification lost"];
   protected siteOptions = ["All", "Off-site", "North Campus", "East Convention Center"];

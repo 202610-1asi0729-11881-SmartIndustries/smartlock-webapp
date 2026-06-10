@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell, MatCellDef,
   MatColumnDef,
@@ -9,6 +9,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
+import {Person} from '../../../domain/model/person.entity';
 
 @Component({
   selector: 'app-people-table',
@@ -28,14 +29,6 @@ import {
   styleUrl: './people-table.css',
 })
 export class PeopleTable {
-  protected people: {id: number, name: string, currentLocation: string, status: "active"|"inactive"}[] = [
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-    {id: 1, name: "Carlos Mendoza", currentLocation: "North Campus - Server room", status: "active"},
-  ]
-
+  people = input<Person[]>([]);
   protected peopleColumns = ["id", "name", "currentLocation", "status"];
 }

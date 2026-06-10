@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="people">
+<table mat-table [dataSource]="people()">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>ID</th>
     <td mat-cell *matCellDef="let element">{{element.id}}</td>
