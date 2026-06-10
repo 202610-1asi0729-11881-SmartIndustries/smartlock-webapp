@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="alerts">
+<table mat-table [dataSource]="alerts()">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>{{'alerts.table.id' | translate}}</th>
     <td mat-cell *matCellDef="let element">{{element.id}}</td>
