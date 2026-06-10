@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="sites">
+<table mat-table [dataSource]="sites()">
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef>{{'sites.table.id' | translate}}</th>
     <td mat-cell *matCellDef="let element">{{element.id}}</td>
