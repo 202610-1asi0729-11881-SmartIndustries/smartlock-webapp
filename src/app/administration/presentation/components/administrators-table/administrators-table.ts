@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -9,6 +9,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import {TranslatePipe} from '@ngx-translate/core';
+import {Administrator} from '../../../domain/model/administrator.entity';
 
 @Component({
   selector: 'app-administrators-table',
@@ -29,12 +30,6 @@ import {TranslatePipe} from '@ngx-translate/core';
   styleUrl: './administrators-table.css',
 })
 export class AdministratorsTable {
-  protected administrators: {id: number, name: string, role: string, invitationStatus: string}[] = [
-    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
-    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Accepted"},
-    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
-    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Accepted"},
-    {id: 1, name: "Imanol Limache", role: "Operator", invitationStatus: "Pending"},
-  ];
-  protected administratorsColumns: string[] = ["id", "name", "role", "invitationStatus"]
+  administrators = input<Administrator[]>([]);
+  protected administratorsColumns: string[] = ['id', 'name', 'role', 'status'];
 }

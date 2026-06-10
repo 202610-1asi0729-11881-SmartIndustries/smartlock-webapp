@@ -9,6 +9,7 @@ import {MatIconButton} from '@angular/material/button';
 import {AdministratorsTable} from '../../components/administrators-table/administrators-table';
 import {InviteAdministratorForm} from '../../components/invite-administrator-form/invite-administrator-form';
 import {TranslatePipe} from '@ngx-translate/core';
+import {AdministrationStore} from '../../../application/administration.store';
 
 @Component({
   selector: 'app-administrators',
@@ -28,6 +29,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 })
 export class Administrators {
   protected readonly dialog = inject(MatDialog);
+  protected readonly store = inject(AdministrationStore);
 
   protected rolesOptions: String[] = ["Operator", "Root"];
   protected invitationStatusOptions: string[] = ['All', 'Accepted', 'Pending'];
