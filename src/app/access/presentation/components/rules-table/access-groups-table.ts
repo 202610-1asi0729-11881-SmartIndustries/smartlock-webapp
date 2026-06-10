@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -11,6 +11,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
+import {AccessGroup} from '../../../domain/model/access-group.entity';
 
 @Component({
   selector: 'app-access-groups-table',
@@ -30,15 +31,6 @@ import {
   styleUrl: './access-groups-table.css',
 })
 export class AccessGroupsTable {
-  protected rules: {id: number, name: string, site: string, status: string}[] = [
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-    {id: 1, name: 'Weekend maintenance', site: 'North campus', status: 'active'},
-  ];
-
-  protected rulesColumns: string[] = ['id', 'name', 'site', 'status'];
+  rules = input<AccessGroup[]>([]);
+  protected rulesColumns: string[] = ['id', 'name'];
 }

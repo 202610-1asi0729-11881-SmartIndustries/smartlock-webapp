@@ -8,6 +8,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {AccessGroupsTable} from '../../components/rules-table/access-groups-table';
 import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {CreateAccessGroupForm} from '../../components/create-access-group-form/create-access-group-form';
+import {AccessStore} from '../../../application/access.store';
 
 @Component({
   selector: 'app-access-groups',
@@ -27,6 +28,7 @@ import {CreateAccessGroupForm} from '../../components/create-access-group-form/c
 })
 export class AccessGroups {
   protected readonly dialog = inject(MatDialog);
+  protected readonly store = inject(AccessStore);
 
   protected siteOptions: string[] = ['all','North campus', 'East campus', 'West campus'];
   protected statusOptions: string[] = ['Active', 'Disabled'];
