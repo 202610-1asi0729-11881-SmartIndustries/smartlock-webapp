@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -12,6 +12,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import {TranslatePipe} from '@ngx-translate/core';
+import {Role} from '../../../domain/model/role.entity';
 
 @Component({
   selector: 'app-roles-table',
@@ -32,11 +33,6 @@ import {TranslatePipe} from '@ngx-translate/core';
   styleUrl: './roles-table.css',
 })
 export class RolesTable {
-  protected roles: {id: number, name: string}[] = [
-    {id: 1, name: 'Administrator'},
-    {id: 2, name: 'Operator'},
-    {id: 3, name: 'Viewer'},
-    {id: 4, name: 'Auditor'},
-  ];
+  roles = input<Role[]>([]);
   protected rolesColumns: string[] = ['id', 'name'];
 }
