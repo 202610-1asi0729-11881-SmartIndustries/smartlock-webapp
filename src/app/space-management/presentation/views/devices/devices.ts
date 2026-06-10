@@ -8,6 +8,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {DevicesTable} from '../../components/devices-table/devices-table';
 import {AddDeviceForm} from '../../components/add-device-form/add-device-form';
+import {SpaceManagementStore} from '../../../application/space-management.store';
 
 @Component({
   selector: 'app-devices',
@@ -26,6 +27,7 @@ import {AddDeviceForm} from '../../components/add-device-form/add-device-form';
 })
 export class Devices {
   protected readonly dialog = inject(MatDialog);
+  protected readonly store = inject(SpaceManagementStore);
 
   protected siteOptions = ['All', 'Off-site', 'North Campus', 'East Convention Center'];
   protected statusOptions = ['Online', 'Offline'];

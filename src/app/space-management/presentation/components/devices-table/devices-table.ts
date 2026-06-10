@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -10,6 +10,7 @@ import {
   MatTable
 } from '@angular/material/table';
 import { StatusBadge } from '../../../../shared/presentation/component/status-badge/status-badge';
+import {Device} from '../../../domain/model/device.entity';
 
 @Component({
   selector: 'app-devices-table',
@@ -30,13 +31,6 @@ import { StatusBadge } from '../../../../shared/presentation/component/status-ba
   styleUrl: './devices-table.css',
 })
 export class DevicesTable {
-  protected devices: {id: number, name: string, site: string, mode: string, status: string}[] = [
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Offline"},
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
-    {id: 1, name: "Main entrance access", site: "North campus", mode: "Free", status: "Online"},
-  ]
-
+  devices = input<Device[]>([]);
   protected devicesColumns: string[] = ['id', 'name', 'site', 'mode', 'status'];
 }
