@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -11,6 +11,7 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
+import {AccessEvent} from '../../../domain/model/access-event.entity';
 
 @Component({
   selector: 'app-access-events-table',
@@ -30,14 +31,6 @@ import {
   styleUrl: './access-events-table.css',
 })
 export class AccessEventsTable {
-  protected audit: {type: string, status: string, personName: string, location: string, dateTime: string}[] = [
-    {type: 'Access attempt', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-    {type: 'Access attempt', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-    {type: 'Alert', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-    {type: 'Access attempt', status: 'Rejected', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-    {type: 'Alert', status: 'Resolved', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-    {type: 'Access attempt', status: 'Accepted', personName: 'Carlos Mendoza', location: 'North Campus', dateTime: '2021-01-01'},
-  ];
-
-  protected auditColumns: string[] = ['type', 'status', 'personName', 'location', 'dateTime'];
+  audit = input<AccessEvent[]>([]);
+  protected auditColumns: string[] = ['id', 'location', 'person', 'status', 'date'];
 }
