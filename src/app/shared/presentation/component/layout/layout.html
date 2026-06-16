@@ -13,7 +13,7 @@
   </button>
   <mat-menu #menu="matMenu" xPosition="before" class="profile-dropdown">
     <div class="menu-header">
-      <span class="user-name">Imanol Limache</span>
+      <span class="user-name">{{ iamStore.currentUser()?.fullName }}</span>
     </div>
 
     <mat-divider></mat-divider>
@@ -23,7 +23,7 @@
       <span>{{"topbar.menu.subscription" | translate}}</span>
     </button>
 
-    <button mat-menu-item class="btn-signout">
+    <button mat-menu-item class="btn-signout" (click)="signOut()">
       <mat-icon>logout</mat-icon>
       <span>{{"topbar.menu.sign-out" | translate}}</span>
     </button>
