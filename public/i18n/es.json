@@ -90,5 +90,29 @@
       "email": "Email",
       "role": "Rol"
     }
+  },
+  "auth": {
+    "sign-in": {
+      "title": "Iniciar sesión",
+      "heading": "Iniciar sesión",
+      "email": "Email",
+      "password": "Contraseña",
+      "submit": "Iniciar sesión",
+      "loading": "Iniciando sesión...",
+      "no-account": "¿No tienes cuenta?",
+      "link-sign-up": "Registrarse"
+    },
+    "sign-up": {
+      "title": "Registro",
+      "heading": "Registro",
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email": "Email",
+      "password": "Contraseña",
+      "submit": "Crear cuenta",
+      "loading": "Creando cuenta...",
+      "have-account": "¿Ya tienes cuenta?",
+      "link-sign-in": "Iniciar sesión"
+    }
   }
 }

@@ -90,5 +90,29 @@
       "email": "Email",
       "role": "Role"
     }
+  },
+  "auth": {
+    "sign-in": {
+      "title": "Sign in",
+      "heading": "Sign in",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "loading": "Signing in...",
+      "no-account": "Don't have an account?",
+      "link-sign-up": "Sign up"
+    },
+    "sign-up": {
+      "title": "Sign up",
+      "heading": "Sign up",
+      "first-name": "First name",
+      "last-name": "Last name",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Create account",
+      "loading": "Creating account...",
+      "have-account": "Already have an account?",
+      "link-sign-in": "Sign in"
+    }
   }
 }
