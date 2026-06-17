@@ -30,6 +30,10 @@ export class SpaceManagementApi extends BaseApi{
     return this.organizationsEndpoint.getByUserId(userId);
   }
 
+  createOrganization(name: string, description: string): Observable<Organization> {
+    return this.organizationsEndpoint.createOrganization(name, description);
+  }
+
   getSitesByOrganizationId(organizationId: number): Observable<Site[]> {
     return this.sitesEndpoint.getByOrganizationId(organizationId);
   }

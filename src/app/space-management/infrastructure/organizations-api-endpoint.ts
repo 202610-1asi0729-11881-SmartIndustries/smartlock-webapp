@@ -16,4 +16,10 @@ export class OrganizationsApiEndpoint extends BaseApiEndpoint<Organization, Orga
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
     );
   }
+
+  createOrganization(name: string, description: string): Observable<Organization> {
+    return this.http.post<OrganizationsResource>(this.endpointUrl, { name, description }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
 }

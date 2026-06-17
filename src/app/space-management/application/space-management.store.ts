@@ -53,6 +53,22 @@ export class SpaceManagementStore {
     this.loadDevices(organizationId);
   }
 
+  createOrganization(name: string, description: string): void {
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.createOrganization(name, description).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadOrganizations();
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to create organization'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   private loadOrganizations(): void {
     const userId = this.iamStore.currentUser()?.id;
     if (!userId) return;
