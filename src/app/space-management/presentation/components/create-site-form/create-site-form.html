@@ -1,0 +1,15 @@
+<h2 matDialogTitle>Create site</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name" name="name" required>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput rows="3" [(ngModel)]="description" name="description"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button matDialogClose>Cancel</button>
+  <button mat-button [disabled]="store.loading() || !name" (click)="submit()">Create</button>
+</mat-dialog-actions>

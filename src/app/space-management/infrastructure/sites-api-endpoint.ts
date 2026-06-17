@@ -16,4 +16,10 @@ export class SitesApiEndpoint extends BaseApiEndpoint<Site, SitesResource, Sites
       map(resources => resources.map(r => this.assembler.toEntityFromResource(r)))
     );
   }
+
+  createSite(organizationId: number, name: string, description: string): Observable<Site> {
+    return this.http.post<SitesResource>(this.endpointUrl, { organizationId, name, description }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
 }

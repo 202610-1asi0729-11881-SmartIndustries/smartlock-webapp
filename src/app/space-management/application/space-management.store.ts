@@ -88,6 +88,25 @@ export class SpaceManagementStore {
     });
   }
 
+  createSite(name: string, description: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.createSite(orgId, name, description).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadSites(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to create site'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   private loadOrganizations(): void {
     const userId = this.iamStore.currentUser()?.id;
     if (!userId) return;

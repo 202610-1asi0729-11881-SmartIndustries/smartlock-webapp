@@ -10,4 +10,21 @@
 .filters {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.filters div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filters div app-search-bar,
+.filters > button {
+  transform: translateY(-8px);
+}
+
+app-sites-table {
+  flex: 1;
+  min-height: 0;
 }

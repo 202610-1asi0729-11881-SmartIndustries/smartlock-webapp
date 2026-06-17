@@ -1,5 +1,10 @@
 <h1>{{'sites.title' | translate}}</h1>
 <div class="filters">
-  <app-search-bar/>
+  <div>
+    <app-search-bar/>
+  </div>
+  <button matIconButton="outlined" (click)="openCreateSiteForm()">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
 <app-sites-table [sites]="store.sites()"/>
