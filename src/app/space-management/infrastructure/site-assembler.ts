@@ -8,10 +8,15 @@ export class SiteAssembler implements BaseAssembler<Site, SitesResource, SitesRe
   }
 
   toEntityFromResource(resource: SitesResource): Site {
-    return new Site(resource.id, resource.name);
+    return new Site(resource.id, resource.organizationId, resource.name, resource.description);
   }
 
   toResourceFromEntity(entity: Site): SitesResource {
-    return {id: entity.id, name: entity.name} as SitesResource;
+    return {
+      id: entity.id,
+      organizationId: entity.organizationId,
+      name: entity.name,
+      description: entity.description
+    } as SitesResource;
   }
 }
