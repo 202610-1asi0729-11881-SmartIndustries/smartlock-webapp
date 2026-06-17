@@ -1,11 +1,11 @@
-<mat-card appearance="outlined">
+<mat-card appearance="outlined" (click)="openOrganization()" role="button" tabindex="0">
   <mat-card-header>
     <div class="header-content">
       <div>
         <mat-card-title>{{organization().name}}</mat-card-title>
         <mat-card-subtitle>{{organization().ownerName}}</mat-card-subtitle>
       </div>
-      <button mat-icon-button [matMenuTriggerFor]="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu" (click)="$event.stopPropagation()">
         <mat-icon>more_vert</mat-icon>
       </button>
     </div>
