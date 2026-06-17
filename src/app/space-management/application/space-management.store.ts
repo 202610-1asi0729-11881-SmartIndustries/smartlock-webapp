@@ -7,6 +7,8 @@ import { Person } from '../domain/model/person.entity';
 import { IamStore } from '../../iam/application/iam.store';
 import { Subject, takeUntil } from 'rxjs';
 
+const SELECTED_ORG_KEY = 'smartlock-selected-org';
+
 @Injectable({ providedIn: 'root' })
 export class SpaceManagementStore {
 
@@ -41,11 +43,11 @@ export class SpaceManagementStore {
       this.destroy$.complete();
     });
     this.loadOrganizations();
-    this.loadDevices();
   }
 
   selectOrganization(organizationId: number): void {
     this.selectedOrganizationIdSignal.set(organizationId);
+    localStorage.setItem(SELECTED_ORG_KEY, String(organizationId));
     this.loadSites(organizationId);
     this.loadPeople(organizationId);
   }
@@ -61,6 +63,10 @@ export class SpaceManagementStore {
         this.organizationsSignal.set(organizations);
         this.loadingSignal.set(false);
         this.errorSignal.set(null);
+        const savedOrgId = localStorage.getItem(SELECTED_ORG_KEY);
+        if (savedOrgId) {
+          this.selectOrganization(Number(savedOrgId));
+        }
       },
       error: err => {
         this.errorSignal.set(this.formatError(err, 'Failed to load organizations'));
