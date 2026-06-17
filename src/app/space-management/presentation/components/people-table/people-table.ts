@@ -30,5 +30,5 @@ import {Person} from '../../../domain/model/person.entity';
 })
 export class PeopleTable {
   people = input<Person[]>([]);
-  protected peopleColumns = ["id", "name", "currentLocation", "status"];
+  protected peopleColumns = ['id', 'firstName', 'lastName', 'identityDocument'];
 }
