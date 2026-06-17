@@ -22,7 +22,7 @@ export class AdministrationApi extends BaseApi {
     return this.administratorsEndpoint.getAll();
   }
 
-  getRoles(): Observable<Role[]> {
-    return this.rolesEndpoint.getAll();
+  getRolesByOrganizationId(organizationId: number): Observable<Role[]> {
+    return this.rolesEndpoint.getByOrganizationId(organizationId);
   }
 }

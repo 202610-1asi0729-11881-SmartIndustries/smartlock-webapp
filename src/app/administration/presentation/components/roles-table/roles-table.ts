@@ -34,5 +34,5 @@ import {Role} from '../../../domain/model/role.entity';
 })
 export class RolesTable {
   roles = input<Role[]>([]);
-  protected rolesColumns: string[] = ['id', 'name'];
+  protected rolesColumns: string[] = ['name', 'deletable'];
 }
