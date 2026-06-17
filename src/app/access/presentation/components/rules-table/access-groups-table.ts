@@ -32,5 +32,5 @@ import {AccessGroup} from '../../../domain/model/access-group.entity';
 })
 export class AccessGroupsTable {
   rules = input<AccessGroup[]>([]);
-  protected rulesColumns: string[] = ['id', 'name'];
+  protected rulesColumns: string[] = ['name', 'description'];
 }
