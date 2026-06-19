@@ -30,7 +30,6 @@ export class Administrators {
   protected readonly store = inject(AdministrationStore);
 
   protected rolesOptions: String[] = ["Operator", "Root"];
-  protected invitationStatusOptions: string[] = ['All', 'Accepted', 'Pending'];
 
   protected openInviteAdministratorForm() {
     this.dialog.open(InviteAdministratorForm);

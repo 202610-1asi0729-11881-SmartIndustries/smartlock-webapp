@@ -1,31 +1,6 @@
 <h1>Groups</h1>
 <div class="filters">
-  <div>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Status</mat-label>
-
-      <mat-select>
-        @for (option of statusOptions; track option) {
-          <mat-option [value]="option">
-            {{ option }}
-          </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Current site</mat-label>
-
-      <mat-select>
-        @for (option of siteOptions; track option) {
-          <mat-option [value]="option">
-            {{ option }}
-          </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-  </div>
+  <div></div>
   <button matIconButton="outlined" (click)="openCreateRuleForm()">
     <mat-icon>add</mat-icon>
   </button>

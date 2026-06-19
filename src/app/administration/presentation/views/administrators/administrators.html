@@ -12,14 +12,6 @@
         }
       </mat-select>
     </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>{{'administrators.filters.invitation-status' | translate}}</mat-label>
-      <mat-select>
-        @for (option of invitationStatusOptions; track option) {
-          <mat-option [value]="option">{{ option }}</mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
   </div>
   <button matIconButton="outlined" (click)="openInviteAdministratorForm()">
     <mat-icon>add</mat-icon>
