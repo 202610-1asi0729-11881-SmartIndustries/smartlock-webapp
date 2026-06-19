@@ -42,12 +42,28 @@ export class SpaceManagementApi extends BaseApi{
     return this.sitesEndpoint.createSite(organizationId, name, description);
   }
 
+  updateSite(siteId: number, name: string, description: string): Observable<Site> {
+    return this.sitesEndpoint.updateSite(siteId, name, description);
+  }
+
+  deleteSite(siteId: number): Observable<void> {
+    return this.sitesEndpoint.deleteSite(siteId);
+  }
+
   getDevicesByOrganizationId(organizationId: number): Observable<Device[]> {
     return this.devicesEndpoint.getByOrganizationId(organizationId);
   }
 
   createDevice(siteId: number, name: string, mode: string): Observable<Device> {
     return this.devicesEndpoint.createDevice(siteId, name, mode);
+  }
+
+  updateDevice(deviceId: number, siteId: number, name: string, mode: string): Observable<Device> {
+    return this.devicesEndpoint.updateDevice(deviceId, siteId, name, mode);
+  }
+
+  deleteDevice(deviceId: number): Observable<void> {
+    return this.devicesEndpoint.deleteDevice(deviceId);
   }
 
   getPeopleByOrganizationId(organizationId: number): Observable<Person[]> {
@@ -58,19 +74,11 @@ export class SpaceManagementApi extends BaseApi{
     return this.peopleEndpoint.createPerson(organizationId, firstName, lastName, identityDocument);
   }
 
-  deleteOrganization(id: number): Observable<void> {
-    return this.organizationsEndpoint.delete(id);
+  updatePerson(personId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
+    return this.peopleEndpoint.updatePerson(personId, firstName, lastName, identityDocument);
   }
 
-  deleteSite(id: number): Observable<void> {
-    return this.sitesEndpoint.delete(id);
-  }
-
-  deleteDevice(id: number): Observable<void> {
-    return this.devicesEndpoint.delete(id);
-  }
-
-  deletePerson(id: number): Observable<void> {
-    return this.peopleEndpoint.delete(id);
+  deletePerson(personId: number): Observable<void> {
+    return this.peopleEndpoint.deletePerson(personId);
   }
 }

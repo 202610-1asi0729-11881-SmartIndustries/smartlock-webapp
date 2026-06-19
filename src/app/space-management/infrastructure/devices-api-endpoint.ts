@@ -22,4 +22,14 @@ export class DevicesApiEndpoint extends BaseApiEndpoint<Device, DevicesResource,
       map(resource => this.assembler.toEntityFromResource(resource))
     );
   }
+
+  updateDevice(deviceId: number, siteId: number, name: string, mode: string): Observable<Device> {
+    return this.http.put<DevicesResource>(`${this.endpointUrl}/${deviceId}`, { siteId, name, mode }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
+
+  deleteDevice(deviceId: number): Observable<void> {
+    return this.http.delete<void>(`${this.endpointUrl}/${deviceId}`);
+  }
 }

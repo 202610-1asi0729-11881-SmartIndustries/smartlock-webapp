@@ -1,6 +1,5 @@
 import {Component, inject} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {MatFormField, MatLabel} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
@@ -14,7 +13,6 @@ import {AdministrationStore} from '../../../application/administration.store';
 @Component({
   selector: 'app-administrators',
   imports: [
-    SearchBar,
     MatFormField,
     MatLabel,
     MatOption,
@@ -32,7 +30,6 @@ export class Administrators {
   protected readonly store = inject(AdministrationStore);
 
   protected rolesOptions: String[] = ["Operator", "Root"];
-  protected invitationStatusOptions: string[] = ['All', 'Accepted', 'Pending'];
 
   protected openInviteAdministratorForm() {
     this.dialog.open(InviteAdministratorForm);

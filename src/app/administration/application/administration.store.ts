@@ -58,6 +58,25 @@ export class AdministrationStore {
     });
   }
 
+  updateRole(roleId: number, name: string, canCreateSites: boolean, canCreatePeople: boolean, canConnectDevices: boolean): void {
+    const orgId = this.spaceManagementStore.selectedOrganizationId();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.administrationApi.updateRole(roleId, name, canCreateSites, canCreatePeople, canConnectDevices).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadRoles(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update role'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   private loadAdministrators(organizationId: number): void {
     this.loadingSignal.set(true);
     this.errorSignal.set(null);

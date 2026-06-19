@@ -1,4 +1,4 @@
-<h2 matDialogTitle>Create person</h2>
+<h2 matDialogTitle>{{ isEdit ? 'Edit person' : 'Create person' }}</h2>
 <mat-dialog-content>
   <mat-form-field>
     <mat-label>First name</mat-label>
@@ -15,5 +15,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button matDialogClose>Cancel</button>
-  <button mat-button [disabled]="store.loading() || !firstName || !lastName || !identityDocument" (click)="submit()">Create</button>
+  <button mat-button [disabled]="store.loading() || !firstName || !lastName || !identityDocument" (click)="submit()">{{ isEdit ? 'Save' : 'Create' }}</button>
 </mat-dialog-actions>

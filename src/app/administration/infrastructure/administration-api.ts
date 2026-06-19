@@ -29,4 +29,8 @@ export class AdministrationApi extends BaseApi {
   createRole(organizationId: number, name: string, canCreateSites: boolean, canCreatePeople: boolean, canConnectDevices: boolean): Observable<Role> {
     return this.rolesEndpoint.createRole(organizationId, name, canCreateSites, canCreatePeople, canConnectDevices);
   }
+
+  updateRole(roleId: number, name: string, canCreateSites: boolean, canCreatePeople: boolean, canConnectDevices: boolean): Observable<Role> {
+    return this.rolesEndpoint.updateRole(roleId, name, canCreateSites, canCreatePeople, canConnectDevices);
+  }
 }

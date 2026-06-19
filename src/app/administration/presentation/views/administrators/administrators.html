@@ -1,7 +1,6 @@
 <h1>{{'administrators.title' | translate}}</h1>
 <div class="filters">
   <div>
-     <app-search-bar/>
     <mat-form-field appearance="outline">
       <mat-label>{{'administrators.filters.role' | translate}}</mat-label>
 
@@ -10,14 +9,6 @@
           <mat-option [value]="option">
             {{ option }}
           </mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>{{'administrators.filters.invitation-status' | translate}}</mat-label>
-      <mat-select>
-        @for (option of invitationStatusOptions; track option) {
-          <mat-option [value]="option">{{ option }}</mat-option>
         }
       </mat-select>
     </mat-form-field>

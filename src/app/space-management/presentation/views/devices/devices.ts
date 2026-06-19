@@ -1,6 +1,5 @@
 import {Component, inject} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {MatFormField, MatLabel} from '@angular/material/input';
 import {MatOption} from '@angular/material/core';
 import {MatSelect} from '@angular/material/select';
@@ -13,7 +12,6 @@ import {SpaceManagementStore} from '../../../application/space-management.store'
 @Component({
   selector: 'app-devices',
   imports: [
-    SearchBar,
     MatFormField,
     MatLabel,
     MatOption,

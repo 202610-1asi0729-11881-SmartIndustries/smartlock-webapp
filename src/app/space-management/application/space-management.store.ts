@@ -88,6 +88,44 @@ export class SpaceManagementStore {
     });
   }
 
+  updatePerson(personId: number, firstName: string, lastName: string, identityDocument: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updatePerson(personId, firstName, lastName, identityDocument).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadPeople(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update person'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deletePerson(personId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deletePerson(personId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadPeople(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete person'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   createSite(name: string, description: string): void {
     const orgId = this.selectedOrganizationIdSignal();
     if (!orgId) return;
@@ -107,6 +145,44 @@ export class SpaceManagementStore {
     });
   }
 
+  updateSite(siteId: number, name: string, description: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updateSite(siteId, name, description).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadSites(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update site'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deleteSite(siteId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deleteSite(siteId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadSites(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete site'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   createDevice(siteId: number, name: string, mode: string): void {
     const orgId = this.selectedOrganizationIdSignal();
     if (!orgId) return;
@@ -121,6 +197,44 @@ export class SpaceManagementStore {
       },
       error: err => {
         this.errorSignal.set(this.formatError(err, 'Failed to create device'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  updateDevice(deviceId: number, siteId: number, name: string, mode: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updateDevice(deviceId, siteId, name, mode).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadDevices(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update device'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deleteDevice(deviceId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deleteDevice(deviceId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadDevices(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete device'));
         this.loadingSignal.set(false);
       }
     });

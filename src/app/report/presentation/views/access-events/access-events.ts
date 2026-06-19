@@ -5,13 +5,11 @@ import {MatSelect} from '@angular/material/select';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {AccessEventsTable} from '../../components/access-events-table/access-events-table';
-import {SearchBar} from '../../../../shared/presentation/component/search-bar/search-bar';
 import {ReportStore} from '../../../application/report.store';
 
 @Component({
   selector: 'app-access-events',
   imports: [
-    SearchBar,
     MatFormField,
     MatLabel,
     MatOption,
@@ -19,7 +17,6 @@ import {ReportStore} from '../../../application/report.store';
     MatIcon,
     MatIconButton,
     AccessEventsTable,
-    SearchBar
   ],
   templateUrl: './access-events.html',
   styleUrl: './access-events.css',

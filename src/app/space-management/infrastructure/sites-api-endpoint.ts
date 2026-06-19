@@ -22,4 +22,14 @@ export class SitesApiEndpoint extends BaseApiEndpoint<Site, SitesResource, Sites
       map(resource => this.assembler.toEntityFromResource(resource))
     );
   }
+
+  updateSite(siteId: number, name: string, description: string): Observable<Site> {
+    return this.http.put<SitesResource>(`${this.endpointUrl}/${siteId}`, { name, description }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
+
+  deleteSite(siteId: number): Observable<void> {
+    return this.http.delete<void>(`${this.endpointUrl}/${siteId}`);
+  }
 }

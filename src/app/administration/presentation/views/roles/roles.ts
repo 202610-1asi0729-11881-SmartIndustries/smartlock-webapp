@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { MatIconButton } from '@angular/material/button';
 import { MatDialog } from '@angular/material/dialog';
 import { MatIcon } from '@angular/material/icon';
-import { SearchBar } from '../../../../shared/presentation/component/search-bar/search-bar';
 import { TranslatePipe } from '@ngx-translate/core';
 import { RolesTable } from '../../components/roles-table/roles-table';
 import { CreateRoleForm } from '../../components/create-role-form/create-role-form';
@@ -11,7 +10,6 @@ import { AdministrationStore } from '../../../application/administration.store';
 @Component({
   selector: 'app-roles',
   imports: [
-    SearchBar,
     RolesTable,
     TranslatePipe,
     MatIcon,

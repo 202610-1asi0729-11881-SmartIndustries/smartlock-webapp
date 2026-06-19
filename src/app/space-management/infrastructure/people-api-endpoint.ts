@@ -22,4 +22,14 @@ export class PeopleApiEndpoint extends BaseApiEndpoint<Person, PeopleResource, P
       map(resource => this.assembler.toEntityFromResource(resource))
     );
   }
+
+  updatePerson(personId: number, firstName: string, lastName: string, identityDocument: string): Observable<Person> {
+    return this.http.put<PeopleResource>(`${this.endpointUrl}/${personId}`, { firstName, lastName, identityDocument }).pipe(
+      map(resource => this.assembler.toEntityFromResource(resource))
+    );
+  }
+
+  deletePerson(personId: number): Observable<void> {
+    return this.http.delete<void>(`${this.endpointUrl}/${personId}`);
+  }
 }
