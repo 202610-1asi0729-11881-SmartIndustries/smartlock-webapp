@@ -1,4 +1,4 @@
-import {Component, input} from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import {
   MatCell,
   MatCellDef,
@@ -12,8 +12,11 @@ import {
 import { MatIconButton } from '@angular/material/button';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { MatDialog } from '@angular/material/dialog';
 import { StatusBadge } from '../../../../shared/presentation/component/status-badge/status-badge';
 import { Device } from '../../../domain/model/device.entity';
+import { AddDeviceForm } from '../add-device-form/add-device-form';
+import { SpaceManagementStore } from '../../../application/space-management.store';
 
 @Component({
   selector: 'app-devices-table',
@@ -42,11 +45,14 @@ export class DevicesTable {
   devices = input<Device[]>([]);
   protected devicesColumns: string[] = ['id', 'name', 'siteName', 'mode', 'status', 'actions'];
 
+  private readonly dialog = inject(MatDialog);
+  private readonly store = inject(SpaceManagementStore);
+
   protected editDevice(device: Device): void {
-    // TODO
+    this.dialog.open(AddDeviceForm, { data: device });
   }
 
   protected deleteDevice(device: Device): void {
-    // TODO
+    this.store.deleteDevice(device.id);
   }
 }

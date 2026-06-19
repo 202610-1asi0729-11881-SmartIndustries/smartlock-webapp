@@ -1,4 +1,4 @@
-<h2 matDialogTitle>Add device</h2>
+<h2 matDialogTitle>{{ isEdit ? 'Edit device' : 'Add device' }}</h2>
 <mat-dialog-content>
   <mat-form-field>
     <mat-label>Name</mat-label>
@@ -23,5 +23,5 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button matDialogClose>Cancel</button>
-  <button mat-button [disabled]="store.loading() || !name || !selectedSiteId || !selectedMode" (click)="submit()">Add</button>
+  <button mat-button [disabled]="store.loading() || !name || !selectedSiteId || !selectedMode" (click)="submit()">{{ isEdit ? 'Save' : 'Add' }}</button>
 </mat-dialog-actions>

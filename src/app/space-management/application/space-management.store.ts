@@ -202,6 +202,44 @@ export class SpaceManagementStore {
     });
   }
 
+  updateDevice(deviceId: number, siteId: number, name: string, mode: string): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.updateDevice(deviceId, siteId, name, mode).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadDevices(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to update device'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
+  deleteDevice(deviceId: number): void {
+    const orgId = this.selectedOrganizationIdSignal();
+    if (!orgId) return;
+
+    this.loadingSignal.set(true);
+    this.errorSignal.set(null);
+    this.spaceManagementApi.deleteDevice(deviceId).pipe(takeUntil(this.destroy$)).subscribe({
+      next: () => {
+        this.loadingSignal.set(false);
+        this.errorSignal.set(null);
+        this.loadDevices(orgId);
+      },
+      error: err => {
+        this.errorSignal.set(this.formatError(err, 'Failed to delete device'));
+        this.loadingSignal.set(false);
+      }
+    });
+  }
+
   private loadOrganizations(): void {
     const userId = this.iamStore.currentUser()?.id;
     if (!userId) return;
