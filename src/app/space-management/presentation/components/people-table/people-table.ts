@@ -9,7 +9,10 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
-import {Person} from '../../../domain/model/person.entity';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { Person } from '../../../domain/model/person.entity';
 
 @Component({
   selector: 'app-people-table',
@@ -23,12 +26,25 @@ import {Person} from '../../../domain/model/person.entity';
     MatHeaderCell,
     MatHeaderCellDef,
     MatCell,
-    MatCellDef
+    MatCellDef,
+    MatIconButton,
+    MatIcon,
+    MatMenu,
+    MatMenuItem,
+    MatMenuTrigger
   ],
   templateUrl: './people-table.html',
   styleUrl: './people-table.css',
 })
 export class PeopleTable {
   people = input<Person[]>([]);
-  protected peopleColumns = ['id', 'firstName', 'lastName', 'identityDocument'];
+  protected peopleColumns = ['id', 'firstName', 'lastName', 'identityDocument', 'actions'];
+
+  protected editPerson(person: Person): void {
+    // TODO
+  }
+
+  protected deletePerson(person: Person): void {
+    // TODO
+  }
 }
