@@ -11,8 +11,11 @@ import {
   MatRowDef,
   MatTable
 } from '@angular/material/table';
-import {TranslatePipe} from '@ngx-translate/core';
-import {Role} from '../../../domain/model/role.entity';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { TranslatePipe } from '@ngx-translate/core';
+import { Role } from '../../../domain/model/role.entity';
 
 @Component({
   selector: 'app-roles-table',
@@ -27,6 +30,11 @@ import {Role} from '../../../domain/model/role.entity';
     MatHeaderRowDef,
     MatRow,
     MatRowDef,
+    MatIconButton,
+    MatIcon,
+    MatMenu,
+    MatMenuItem,
+    MatMenuTrigger,
     TranslatePipe
   ],
   templateUrl: './roles-table.html',
@@ -34,5 +42,9 @@ import {Role} from '../../../domain/model/role.entity';
 })
 export class RolesTable {
   roles = input<Role[]>([]);
-  protected rolesColumns: string[] = ['name', 'deletable'];
+  protected rolesColumns: string[] = ['name', 'deletable', 'actions'];
+
+  protected editRole(role: Role): void {
+    // TODO
+  }
 }
